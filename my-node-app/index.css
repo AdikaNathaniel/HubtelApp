@@ -4,51 +4,464 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .navbar {
-    background: crimson;
+    background: white;
     font-family: calibri;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid grey;
+    height: 67px;
+    align-items: center;
 }
+
 .navdiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .logo a {
     font-size: 35px;
     font-weight: 600;
     color: white;
 }
 
-li{
+li {
     list-style: none;
     display: inline-block;
 }
-li a{
+
+li a {
     color: black;
     font-size: 18px;
     margin-right: 25px;
 }
 
-.image{
+.image {
     font-size: 20px;
     color: rgba(0, 0, 0, .9);
     font-size: 1.25rem;
     margin-right: 1rem;
     padding-bottom: .3125rem;
     padding-top: .3125rem;
-    -webkit-text-decoration: none;
     text-decoration: none;
     white-space: nowrap;
+    padding-right: 0.5px;
+    margin-left: 12px;
 }
-/* .navdiv ul {
-    display: flex;
-    list-style: none;
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
-.navdiv ul li a {
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    margin-left: 20px;
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    margin-top: 5px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    display: block;
+    padding: 8px 15px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Add arrow to dropdown trigger */
+.dropdown > a:after {
+    content: '▼';
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Ensure dropdown items are properly styled */
+.dropdown-menu li a {
+    display: block;
+    margin: 0;
+    padding: 8px 15px;
+    color: black;
+    font-size: 16px;
+}
+
+.make-orders {
+    background-color: #01c7b1 ;
+    padding: 32px 20px;        
+           
+         
+}
+
+/* .dropdown:hover {
+    background-color: #01c7b1 ;
+   
+    
+}
+
+.dropdown-menu li {
+    padding: 8px 15px;
 } */
+
+
+/* Style the dropdown trigger on hover */
+.dropdown > a {
+    padding: 32px 20px; /* Add padding to cover the text area */
+    border-radius: 4px; /* Optional: Add border-radius for rounded edges */
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Apply the hover effect on the dropdown trigger */
+.dropdown > a:hover {
+    background-color: #01c7b1; /* Match the make-orders color */
+    color: white; /* Change text color for contrast */
+}
+
+.footerContainer {
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+    border-top: 1px solid grey;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Specific styling for Facebook and LinkedIn */
+.socialIcons a:has(.fa-square-facebook),
+.socialIcons a:has(.fa-linkedin-in) {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Keep Instagram and Twitter with transparent background */
+.socialIcons a:has(.fa-instagram),
+.socialIcons a:has(.fa-twitter) {
+    background: transparent;
+}
+
+.socialIcons a:hover {
+    transform: scale(1.2);
+}
+
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff4cc;
+    padding: 20px 0;
+}
+
+.footer-content {
+    width: 100%;
+    padding: 0 40px; /* Add padding to prevent sticking to window edges */
+}
+
+.footer-links ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-divider {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background-color: #FF6B00;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.copyright {
+    margin-left: 0; /* Ensure it starts from the left edge */
+}
+
+.socialIcons {
+    display: flex;
+    gap: 0.2px;
+    margin-right: 0; /* Ensure it goes to the right edge */
+}
+
+.socialIcons a {
+    color: #333;
+    font-size: 20px;
+}
+
+.designer {
+    color: green;
+}
+
+/* Remove or adjust the padding-left that was previously set */
+.socialIcons {
+    padding-left: 0;
+}
+
+/* Optional: Add some spacing between the icons */
+.socialIcons a:not(:last-child) {
+    margin-right: 15px;
+}
+.offices{
+    color: green;
+    padding-left: 887px;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between !important;
+    display: flex;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    color: #000;
+    font-size: .85rem;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    
+    
+}
+
+.footer-section {
+    justify-content: space-between;
+    width: 20%; 
+    padding: 10px; /* Adds space inside the border */
+    margin-bottom: 10px; /* Adds space between items */
+    border-radius: 5px; 
+    
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 10px 0; /* Adds spacing between links */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.vertical-menu {
+    list-style-type: none; /* Removes bullets */
+    padding: 0;
+    border: 10px ; /* Creates a border around each item */
+    padding: 10px; /* Adds space inside the border */
+    margin-bottom: 10px; /* Adds space between items */
+    border-radius: 5px;
+}
+
+.vertical-menu h6 {
+    margin-bottom: 10px; /* Adds space between heading and links */
+}
+
+
+.vertical-menu li {
+    margin: 5px 0; /* Adds space between items */
+}
+
+.vertical-menu ul {
+    list-style-type: none; /* Removes bullets for nested lists */
+    padding-left: 20px; /* Indent for better hierarchy */
+}
+
+.vertical-menu a {
+    text-decoration: none;
+    color: inherit; /* Keeps link color based on parent style */
+}
+
+.no-wrap {
+    font-family: "Sora", sans-serif;
+    white-space: nowrap;
+    display: block; /* Forces each link onto a new line */
+    margin: 5px 0; /* Adds spacing between links (optional) */
+}
+
+.hed{
+    font-family: "Sora", sans-serif;
+}
+
+.app-images {
+    display: flex;
+    gap: 10px; /* Adjust the spacing between images */
+    margin-top: 10px; /* Optional: Add some spacing from the heading */
+}
+
+.app-images img {
+    width: 100px; /* Set a uniform width for the images */
+    height: auto;
+}
+
+.text-muted{
+    color: #9cabb8 !important;
+    white-space: nowrap;
+}
+
+.text-center {
+    margin-top: 30px;
+    text-align: center !important;
+    font-weight: var(--bs-body-font-weight);
+    font-family: "Sora", sans-serif;
+    font-size: .8rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.or-text{
+       margin-top: 10px;
+    text-align: center !important;
+    font-weight: var(--bs-body-font-weight);
+    font-family: "Sora", sans-serif;
+    font-size: .8rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.black-text{
+    margin-top: 10px;
+    text-align: center !important;
+    font-weight: var(--bs-body-font-weight);
+    font-family: "Sora", sans-serif;
+    font-size: .8rem;
+    -webkit-font-smoothing: antialiased;
+}
+.login-text{
+    margin-top: 10px;
+    text-align: center !important;
+    font-weight: var(--bs-body-font-weight);
+    font-family: "Sora", sans-serif;
+    font-size: .8rem;
+    -webkit-font-smoothing: antialiased;
+    color: #01c7b1 !important;
+    cursor: pointer !important;
+    font-weight: bold;
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.input{
+        width: 30% !important;
+        position: relative !important;
+        --bs-bg-opacity: 1;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        margin-left: 450px;
+        text-align: center !important;
+        display: flex;
+        justify-content: left; /* Centers horizontally */
+        align-items: left; /* Centers vertically */
+        background-image: url("public/arrow.png");
+        background-repeat: no-repeat; 
+        background-position: 8px center;
+        height: 40px;
+        padding-left: -70px; 
+        text-align: left;  
+        border-color: white; 
+        border-width: 1px; 
+        border-style: solid;  
+        
+}
+
+.arrow-icon{
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px;
+    margin-left: 450px;
+}
+
+.input-box::placeholder {
+    text-align: left;
+}
+
+
+.back {
+    background: no-repeat center center;
+    background-size: cover;
+    height: 200px; /* Adjust the height as needed */
+    text-align: center; /* Center align the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    
+}
+
+body {
+    margin-bottom: 400px; /* Adjust this value based on your footer height */
+}
+
+
+
